@@ -1,1 +1,38 @@
+.nav {
+  background-color: #1d1d1d;
+  color: #f1f1f1;
+  padding: 2.5rem 0;
+  font-size: 1.5rem;
 
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 125px 500px 1fr;
+    align-items: center;
+  }
+
+  &-form {
+    min-width: 250px;
+  }
+
+  &-search {
+    min-width: 100%;
+    padding: 1.25rem 0 1.25rem 2.5rem;
+    border-radius: 500px;
+    outline: none;
+    border: none;
+  }
+
+  &-logo {
+    font-weight: 700;
+    color: #f1f1f1;
+    font-size: 1.8rem;
+  }
+
+  &-links {
+    text-align: end;
+  }
+
+  &-link {
+    color: #f1f1f1;
+  }
+}
