@@ -1,6 +1,14 @@
 <div class="toprated container">
   <h3>TOP RATED</h3>
-  <div *ngFor="let anime of topRated" class="cards">
-    <div class="card">{{ anime.mal_id }}</div>
+  <div class="cards">
+    <div *ngFor="let anime of topRated" class="card">
+      <a href="/">
+        <img
+          src="{{ anime.images.webp.large_image_url }}"
+          alt="{{ anime.title }}"
+        />
+        {{ anime.title }}
+      </a>
+    </div>
   </div>
 </div>
