@@ -17,8 +17,8 @@ body {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #edf1f5;
-  font-size: 1.5rem;
+  background-color: var(--color-background-light);
+  font-size: var(--fs-500);
 }
 
 a {

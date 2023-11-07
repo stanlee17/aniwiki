@@ -5,13 +5,13 @@
 
   &-wrapper {
     display: grid;
-    grid-template-columns: 100px 400px 1fr;
+    grid-template-columns: 10% 25% 65%;
     align-items: center;
   }
 
   &-search {
     min-width: 100%;
-    padding: 1.1rem 0 1.1rem 1.75rem;
+    padding: 1.1rem 1.75rem 1.1rem 1.75rem;
     outline: none;
     border: none;
     font-size: 1.5rem;
@@ -24,7 +24,7 @@
   }
 
   &-links {
-    text-align: end;
+    margin-left: auto;
   }
 
   &-link {

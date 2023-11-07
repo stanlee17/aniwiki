@@ -3,17 +3,17 @@ import { AnimeService } from 'src/app/services/anime.service';
 import { Anime } from 'src/app/anime.interface';
 
 @Component({
-  selector: 'app-toprated',
-  templateUrl: './toprated.component.html',
-  styleUrls: ['./toprated.component.scss'],
+  selector: 'app-upcoming',
+  templateUrl: './upcoming.component.html',
+  styleUrls: ['./upcoming.component.scss'],
 })
-export class TopratedComponent {
+export class UpcomingComponent {
   animes: Anime[] = [];
 
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    this.animeService.getTopRated().subscribe((animes) => {
+    this.animeService.getUpcoming().subscribe((animes) => {
       this.animes = animes;
     });
   }

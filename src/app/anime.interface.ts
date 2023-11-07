@@ -1,8 +1,8 @@
-export interface TopRatedData {
-  data: TopRated[];
+export interface AnimeData {
+  data: Anime[];
 }
 
-export interface TopRated {
+export interface Anime {
   mal_id: number;
   title: string;
   url: string;
