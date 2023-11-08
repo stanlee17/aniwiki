@@ -1,14 +1,16 @@
-<div class="airing container">
-  <h3>AIRING NOW</h3>
-  <div class="cards">
-    <div *ngFor="let anime of animes" class="card">
-      <a href="/">
-        <img
-          src="{{ anime.images.webp.large_image_url }}"
-          alt="{{ anime.title }}"
-        />
-        {{ anime.title }}
-      </a>
+<div class="airing">
+  <div class="container">
+    <h3>AIRING NOW</h3>
+    <div class="cards">
+      <div *ngFor="let anime of animes" class="card">
+        <a href="/">
+          <img
+            src="{{ anime.images.webp.large_image_url }}"
+            alt="{{ anime.title }}"
+          />
+          {{ anime.title }}
+        </a>
+      </div>
     </div>
   </div>
 </div>
