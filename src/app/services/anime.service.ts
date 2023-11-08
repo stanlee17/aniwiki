@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, auditTime } from 'rxjs/operators';
 import { AnimeData, Anime } from '../anime.interface';
 
 @Injectable({
@@ -15,18 +15,21 @@ export class AnimeService {
   getTopRated(): Observable<Anime[]> {
     return this.http
       .get<AnimeData>(`${this.baseUrl}/top/anime?limit=6`)
-      .pipe(map((res: AnimeData) => res.data));
+      .pipe(map((res: AnimeData) => res.data))
+      .pipe(auditTime(1000));
   }
 
   getAiringNow(): Observable<Anime[]> {
     return this.http
       .get<AnimeData>(`${this.baseUrl}/seasons/now?limit=6`)
-      .pipe(map((res: AnimeData) => res.data));
+      .pipe(map((res: AnimeData) => res.data))
+      .pipe(auditTime(1000));
   }
 
   getUpcoming(): Observable<Anime[]> {
     return this.http
       .get<AnimeData>(`${this.baseUrl}/seasons/upcoming?limit=6`)
-      .pipe(map((res: AnimeData) => res.data));
+      .pipe(map((res: AnimeData) => res.data))
+      .pipe(auditTime(1000));
   }
 }
