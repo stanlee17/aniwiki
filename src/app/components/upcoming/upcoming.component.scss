@@ -1,9 +1,13 @@
 .upcoming {
   font-size: 1.6rem;
-  padding-bottom: 7rem;
+  padding-bottom: 8rem;
   letter-spacing: 0.5px;
 
   h3 {
     color: var(--limed-spruce);
+  }
+
+  @media (max-width: 1240px) {
+    padding-bottom: 8rem;
   }
 }

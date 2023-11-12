@@ -3,19 +3,19 @@
   margin: 0 auto;
   padding: 0 2rem;
 
-  @include breakpoint(xl) {
+  @media (max-width: 1240px) {
     max-width: 1140px;
   }
 
-  @include breakpoint(lg) {
+  @media (max-width: 960px) {
     max-width: 960px;
   }
 
-  @include breakpoint(md) {
+  @media (max-width: 768px) {
     max-width: 720px;
   }
 
-  @include breakpoint(sm) {
+  @media (max-width: 600px) {
     max-width: 540px;
   }
 }

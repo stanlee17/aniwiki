@@ -1,9 +1,13 @@
 .toprated {
   font-size: 1.6rem;
-  padding: 7rem 0;
+  padding: 8rem 0 5rem 0;
   letter-spacing: 0.5px;
 
   h3 {
     color: var(--limed-spruce);
+  }
+
+  @media (max-width: 1240px) {
+    padding-bottom: 8rem;
   }
 }
