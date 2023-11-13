@@ -11,6 +11,8 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SearchComponent } from './pages/search/search.component';
+import { AnimedetailsComponent } from './components/animedetails/animedetails.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent,
     BookmarksComponent,
     HomeComponent,
+    SearchComponent,
+    AnimedetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

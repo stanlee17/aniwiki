@@ -3,7 +3,7 @@
     <h3>AIRING NOW</h3>
     <div class="cards">
       <div *ngFor="let anime of animes" class="card">
-        <a href="/">
+        <a [routerLink]="['/anime', anime.mal_id]">
           <img
             src="{{ anime.images.webp.large_image_url }}"
             alt="{{ anime.title }}"

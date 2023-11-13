@@ -32,4 +32,10 @@ export class AnimeService {
       .pipe(map((res: AnimeData) => res.data))
       .pipe(auditTime(1000));
   }
+
+  getAnimeDetails(id: string | null): Observable<Anime[]> {
+    return this.http
+      .get<AnimeData>(`${this.baseUrl}/anime/${id}`)
+      .pipe(map((res: AnimeData) => res.data));
+  }
 }
