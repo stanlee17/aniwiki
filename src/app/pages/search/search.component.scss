@@ -1,0 +1,12 @@
+.search {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+
+  &-input {
+    width: 400px;
+    padding: 1.25rem 0 1.25rem 1.75rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+}

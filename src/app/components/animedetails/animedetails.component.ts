@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/services/anime.service';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 import { Anime } from 'src/app/anime.interface';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-animedetails',
@@ -10,9 +10,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./animedetails.component.scss'],
 })
 export class AnimedetailsComponent implements OnInit {
-  animes: Anime[] = [];
+  animes$: any;
   animeId!: string | null;
-  routeParamObs!: Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,16 +19,11 @@ export class AnimedetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.routeParamObs = this.activatedRoute.paramMap.subscribe((param) => {
-      this.animeId = param.get('id');
-      this.animeService.getAnimeDetails(this.animeId).subscribe((animes) => {
-        this.animes = animes;
-        console.log(animes);
-      });
-    });
-  }
-
-  ngOnDestroy() {
-    this.routeParamObs.unsubscribe();
+    this.animes$ = this.activatedRoute.paramMap.pipe(
+      switchMap((param) => {
+        this.animeId = param.get('id');
+        return this.animeService.getAnimeDetails(this.animeId);
+      })
+    );
   }
 }

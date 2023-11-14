@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AnimeService } from 'src/app/services/anime.service';
+import { Observable } from 'rxjs';
 import { Anime } from 'src/app/anime.interface';
+import { AnimeService } from 'src/app/services/anime.service';
 
 @Component({
   selector: 'app-toprated',
@@ -8,13 +9,11 @@ import { Anime } from 'src/app/anime.interface';
   styleUrls: ['./toprated.component.scss'],
 })
 export class TopratedComponent {
-  animes: Anime[] = [];
+  animes$!: Observable<Anime[]>;
 
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    this.animeService.getTopRated().subscribe((animes) => {
-      this.animes = animes;
-    });
+    this.animes$ = this.animeService.getTopRated();
   }
 }

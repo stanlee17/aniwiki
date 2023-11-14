@@ -1,1 +1,22 @@
-<p>search works!</p>
+<div class="search container">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="search-form">
+    <input
+      type="text"
+      name="search"
+      ngModel
+      class="search-input"
+      placeholder="Search Anime..."
+    />
+  </form>
+  <div class="cards">
+    <div *ngFor="let anime of animes$ | async" class="card">
+      <a [routerLink]="['/anime', anime.mal_id]">
+        <img
+          src="{{ anime.images.webp.large_image_url }}"
+          alt="{{ anime.title }}"
+        />
+        {{ anime.title }}
+      </a>
+    </div>
+  </div>
+</div>

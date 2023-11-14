@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AnimeService } from 'src/app/services/anime.service';
+import { Observable } from 'rxjs';
 import { Anime } from 'src/app/anime.interface';
+import { AnimeService } from 'src/app/services/anime.service';
 
 @Component({
   selector: 'app-upcoming',
@@ -8,13 +9,11 @@ import { Anime } from 'src/app/anime.interface';
   styleUrls: ['./upcoming.component.scss'],
 })
 export class UpcomingComponent {
-  animes: Anime[] = [];
+  animes$!: Observable<Anime[]>;
 
   constructor(private animeService: AnimeService) {}
 
   ngOnInit(): void {
-    this.animeService.getUpcoming().subscribe((animes) => {
-      this.animes = animes;
-    });
+    this.animes$ = this.animeService.getUpcoming();
   }
 }

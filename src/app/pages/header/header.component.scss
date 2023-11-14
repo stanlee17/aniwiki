@@ -1,20 +1,12 @@
 .nav {
   background-color: #2b2d42;
   color: #d3d5f3;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
 
   &-wrapper {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 100px 1fr;
     align-items: center;
-  }
-
-  &-search {
-    width: 300px;
-    padding: 1.1rem 0 1.1rem 1.75rem;
-    outline: none;
-    border: none;
-    font-size: 1.5rem;
   }
 
   &-logo {
@@ -23,8 +15,16 @@
     font-size: 1.8rem;
   }
 
+  &-links {
+    text-align: end;
+  }
+
   &-link {
     color: #d3d5f3;
     font-weight: 500;
+
+    &:not(:last-of-type) {
+      margin-right: 3rem;
+    }
   }
 }

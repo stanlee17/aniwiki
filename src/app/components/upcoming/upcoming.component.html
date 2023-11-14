@@ -2,7 +2,7 @@
   <div class="container">
     <h3>UPCOMING</h3>
     <div class="cards">
-      <div *ngFor="let anime of animes" class="card">
+      <div *ngFor="let anime of animes$ | async" class="card">
         <a [routerLink]="['/anime', anime.mal_id]">
           <img
             src="{{ anime.images.webp.large_image_url }}"

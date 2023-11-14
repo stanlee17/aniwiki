@@ -38,4 +38,10 @@ export class AnimeService {
       .get<AnimeData>(`${this.baseUrl}/anime/${id}`)
       .pipe(map((res: AnimeData) => res.data));
   }
+
+  getSearchedAnime(query: string): Observable<Anime[]> {
+    return this.http
+      .get<AnimeData>(`${this.baseUrl}/anime?q=${query}`)
+      .pipe(map((res: AnimeData) => res.data));
+  }
 }
