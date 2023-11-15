@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Anime } from 'src/app/anime.interface';
 import { AnimeService } from 'src/app/services/anime.service';
 
@@ -10,6 +10,7 @@ import { AnimeService } from 'src/app/services/anime.service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
+  animes: Anime[] = [];
   animes$!: Observable<Anime[]>;
 
   constructor(private animeService: AnimeService) {}
@@ -17,6 +18,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(f: NgForm) {
-    this.animes$ = this.animeService.getSearchedAnime(f.value.search);
+    this.animes$ = this.animeService
+      .getSearchedAnime(f.value.search)
+      .pipe(tap((data) => (this.animes = data)));
   }
 }

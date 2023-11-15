@@ -16,21 +16,21 @@ export class AnimeService {
     return this.http
       .get<AnimeData>(`${this.baseUrl}/top/anime?limit=6`)
       .pipe(map((res: AnimeData) => res.data))
-      .pipe(auditTime(1000));
+      .pipe(auditTime(3000));
   }
 
   getAiringNow(): Observable<Anime[]> {
     return this.http
       .get<AnimeData>(`${this.baseUrl}/seasons/now?limit=6`)
       .pipe(map((res: AnimeData) => res.data))
-      .pipe(auditTime(1000));
+      .pipe(auditTime(3000));
   }
 
   getUpcoming(): Observable<Anime[]> {
     return this.http
       .get<AnimeData>(`${this.baseUrl}/seasons/upcoming?limit=6`)
       .pipe(map((res: AnimeData) => res.data))
-      .pipe(auditTime(1000));
+      .pipe(auditTime(3000));
   }
 
   getAnimeDetails(id: string | null): Observable<Anime[]> {

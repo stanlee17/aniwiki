@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/services/anime.service';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
-import { Anime } from 'src/app/anime.interface';
+import { switchMap, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-animedetails',
@@ -10,8 +9,9 @@ import { Anime } from 'src/app/anime.interface';
   styleUrls: ['./animedetails.component.scss'],
 })
 export class AnimedetailsComponent implements OnInit {
-  animes$: any;
+  animes$!: Observable<any>;
   animeId!: string | null;
+  loading!: boolean;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,8 +20,8 @@ export class AnimedetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.animes$ = this.activatedRoute.paramMap.pipe(
-      switchMap((param) => {
-        this.animeId = param.get('id');
+      switchMap((params) => {
+        this.animeId = params.get('id');
         return this.animeService.getAnimeDetails(this.animeId);
       })
     );

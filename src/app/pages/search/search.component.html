@@ -8,6 +8,9 @@
       placeholder="Search Anime..."
     />
   </form>
+  <p class="search-found" *ngIf="animes.length">
+    Found {{ animes.length }} anime
+  </p>
   <div class="cards">
     <div *ngFor="let anime of animes$ | async" class="card">
       <a [routerLink]="['/anime', anime.mal_id]">

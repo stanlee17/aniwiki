@@ -1,6 +1,6 @@
 .nav {
-  background-color: #2b2d42;
-  color: #d3d5f3;
+  background-color: var(--background-color-light);
+  color: var(--text-light);
   padding: 2.5rem 0;
 
   &-wrapper {
@@ -11,7 +11,7 @@
 
   &-logo {
     font-weight: 700;
-    color: #fafafa;
+    color: var(--color-white);
     font-size: 1.8rem;
   }
 
@@ -20,7 +20,7 @@
   }
 
   &-link {
-    color: #d3d5f3;
+    color: var(--text-light);
     font-weight: 500;
 
     &:not(:last-of-type) {

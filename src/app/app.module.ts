@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, SafePipe } from './app.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { TopratedComponent } from './components/toprated/toprated.component';
 import { AiringComponent } from './components/airing/airing.component';
@@ -27,6 +27,7 @@ import { AnimedetailsComponent } from './components/animedetails/animedetails.co
     HomeComponent,
     SearchComponent,
     AnimedetailsComponent,
+    SafePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
