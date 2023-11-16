@@ -1,1 +1,16 @@
-<p>bookmarks works!</p>
+<div class="bookmarks">
+  <div class="container">
+    <h2>Bookmarked Anime</h2>
+    <div class="cards">
+      <div *ngFor="let bookmark of bookmarks$ | async" class="card">
+        <a [routerLink]="['/anime', bookmark.mal_id]">
+            <img
+                src="{{ bookmark.image }}"
+                alt="{{ bookmark.title }}"
+            />
+            {{ bookmark.title }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

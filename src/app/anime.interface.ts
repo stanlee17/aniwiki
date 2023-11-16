@@ -14,3 +14,9 @@ export interface Anime {
     };
   };
 }
+
+export interface Bookmarks {
+  mal_id: number;
+  title: string;
+  image: string; 
+}
