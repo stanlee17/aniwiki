@@ -5,8 +5,19 @@
 
   &-wrapper {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 100px 350px 1fr;
     align-items: center;
+  }
+
+  &-form {
+    min-width: 250px;
+  }
+
+  &-search {
+    min-width: 100%;
+    padding: 1.25rem 0 1.25rem 2rem;
+    outline: none;
+    border: none;
   }
 
   &-logo {

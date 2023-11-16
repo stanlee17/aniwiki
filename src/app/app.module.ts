@@ -14,6 +14,7 @@ import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { AnimedetailsComponent } from './components/animedetails/animedetails.component';
+import { CharactersComponent } from './components/characters/characters.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AnimedetailsComponent } from './components/animedetails/animedetails.co
     SearchComponent,
     AnimedetailsComponent,
     SafePipe,
+    CharactersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

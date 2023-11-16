@@ -15,6 +15,10 @@ export interface Anime {
   };
 }
 
+export interface Characters {
+  
+}
+
 export interface Bookmarks {
   mal_id: number;
   title: string;

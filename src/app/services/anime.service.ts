@@ -44,4 +44,10 @@ export class AnimeService {
       .get<AnimeData>(`${this.baseUrl}/anime?q=${query}`)
       .pipe(map((res: AnimeData) => res.data));
   }
+
+  getAnimeCharacters(id: string | null): Observable<Anime[]> {
+    return this.http
+      .get<AnimeData>(`${this.baseUrl}/anime/${id}/characters`)
+      .pipe(map((res: AnimeData) => res.data));
+  }
 }
